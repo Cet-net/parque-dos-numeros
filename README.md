@@ -33,6 +33,7 @@ A proposta é incentivar a observação, a contagem, o raciocínio e a tentativa
 - Tentativas ilimitadas, dicas e incentivos, sem perda de vidas ou cronômetro.
 - Três níveis de desafio, com avanço automático opcional após dois acertos de primeira.
 - Estrelas e conquistas por jogador, guardadas no navegador utilizado.
+- Grande final com Leo e um cartaz de parabéns ao concluir cinco desafios em cada uma das nove atrações; a conquista fica salva e pode ser revista.
 - Personagens de diferentes etnias, todos com os mesmos recursos e acesso às atividades.
 - Instruções, dicas e incentivos narrados em português, com controle para desligar a voz.
 

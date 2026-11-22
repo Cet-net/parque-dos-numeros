@@ -118,5 +118,9 @@
   "complete": {
     "src": "assets/voice/complete-dee19fa11d1afe0f.wav",
     "text": "Um espetáculo de descobertas! Você completou os desafios desta atração. O parque tem muito mais para explorar!"
+  },
+  "finale": {
+    "src": "assets/voice/finale-d521e53af29cef08.wav",
+    "text": "Parabéns! Você completou todas as atividades do Parque dos Números! Que espetáculo de descobertas! Uma grande salva de palmas para você!"
   }
 }

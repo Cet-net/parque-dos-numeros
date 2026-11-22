@@ -40,7 +40,7 @@ um pequeno conjunto; identificadores: welcome, entry, activities.cars,
 activities.clowns, activities.factory, activities.patterns, activities.bubbles,
 activities.clock, activities.tickets, activities.shapes, activities.division,
 hints.<atividade> para as nove dicas, success.0 até success.3,
-retry.0 até retry.2 e complete. O catálogo completo tem 28 clipes.
+retry.0 até retry.2, complete e finale. O catálogo completo tem 29 clipes.
 
 --server altera a URL (padrão http://127.0.0.1:8000).
 --probe-timeout altera o limite por consulta (padrão 3 segundos).

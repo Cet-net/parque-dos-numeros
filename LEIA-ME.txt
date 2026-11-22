@@ -26,7 +26,7 @@ Falas com nomes/números variáveis usam o Chatterbox quando aberto pelo servido
 local; na versão estática publicada, são usadas instruções gravadas do mesmo narrador.
 O botão de voz permite desligar a narração. 'Ouvir o desafio' repete a instrução.
 O jogo não troca automaticamente para outra voz do sistema.
-Leia voice-tools/LEIA-ME.txt para regenerar os 28 clipes ou usar outra referência.
+Leia voice-tools/LEIA-ME.txt para regenerar os 29 clipes ou usar outra referência.
 
 CONTROLES DOS CARRINHOS
 Escolha uma pista tocando no carro-alvo ou usando os botões de direção.
@@ -58,3 +58,5 @@ node checks.cjs verifica operações e alternativas em 13.500 questões aleatór
 distribuídas pelas nove atividades e três níveis.
 Arquivos de inspeção do programa antigo e o ISO original ficam separados.
 O programa antigo não é necessário para abrir esta versão.
+
+Ao concluir cinco desafios em cada uma das nove atrações, o jogador desbloqueia o grande final: Leo apresenta um cartaz de parabéns, com confetes e narração. A conquista fica salva no navegador e o final pode ser revisto pelo parque.

@@ -100,7 +100,7 @@ def probe(server, timeout):
 
 
 def flatten_lines(lines):
-    required = ("welcome", "entry", "activities", "success", "retry", "complete", "hints")
+    required = ("welcome", "entry", "activities", "success", "retry", "complete", "hints", "finale")
     if not isinstance(lines, dict) or any(k not in lines for k in required):
         raise ValueError("lines.json deve conter welcome, entry, activities, success, retry e complete.")
     rows = []
