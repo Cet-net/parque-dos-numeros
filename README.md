@@ -1,6 +1,6 @@
 # Parque dos Números
 
-Um parque de diversões circense para explorar matemática brincando. O projeto reúne **nove jogos educativos voltados aos alunos do Ensino Fundamental 1 (1º ao 5º ano)**, com desafios de contagem, operações, sequências, geometria, horas e dinheiro.
+Um parque de diversões circense para explorar matemática brincando. O projeto reúne **nove jogos educativos voltados aos alunos do Ensino Fundamental 1 (1º ao 5º ano)**, com desafios de contagem, operações, sequências, geometria, horas e educação financeira básica.
 
 O leão Leo recebe a criança pelo nome e apresenta um mundo de palhaços, carrinhos e balões. Ilustrações cartunescas, animações e narração em português acompanham as atividades, para que cada resposta faça parte de uma brincadeira.
 
