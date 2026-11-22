@@ -1,0 +1,8 @@
+(()=>{
+'use strict';
+let manifest=window.ParkVoiceManifest||{},current=null,local=false,revision=0;
+const ready=Promise.all([location.protocol==='file:'?Promise.resolve():fetch('assets/voice/manifest.json').then(r=>r.ok?r.json():{}).then(m=>{manifest=m;}).catch(()=>{}),(['127.0.0.1','localhost'].includes(location.hostname)?fetch('/api/voice/status').then(r=>r.ok?r.json():{}).then(s=>{local=s.available===true;}).catch(()=>{}):Promise.resolve())]);
+const get=key=>key.includes('.')?manifest[key.split('.')[0]]?.[key.split('.')[1]]:manifest[key];
+async function start(src,rev){if(rev!==revision)return true;const audio=new Audio(src);current=audio;try{await audio.play();audio.addEventListener('ended',()=>{if(current===audio)current=null;if(src.startsWith('blob:'))URL.revokeObjectURL(src);},{once:true});return true;}catch{if(current===audio)current=null;return false;}}
+window.ParkAudio={ready,stop(){revision++;if(current){current.pause();current=null;}},get local(){return local;},async play(key){const rev=revision;await ready;let item=get(key);if(Array.isArray(item))item=item[Math.floor(Math.random()*item.length)];if(!item?.src)return false;if(!/^assets\/voice\/[A-Za-z0-9_./-]+\.(wav|mp3|ogg|opus)$/.test(item.src)||item.src.includes('..'))return false;return start(item.src,rev);},async synthesize(text){const rev=revision;await ready;if(!local)return false;try{const r=await fetch('/api/narrate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});if(!r.ok)return false;const blob=await r.blob();if(rev!==revision)return true;return start(URL.createObjectURL(blob),rev);}catch{return false;}}};
+})();

@@ -1,0 +1,7 @@
+.voice-cache/
+art-source/
+__pycache__/
+*.pyc
+voice-tools/_test*/
+*.tar.gz
+*.zip

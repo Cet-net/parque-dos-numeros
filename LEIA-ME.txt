@@ -1,0 +1,60 @@
+PARQUE DOS NÚMEROS — versão moderna para Fundamental 1
+
+Nove atividades de matemática, com personagens, ilustrações originais, animações,
+leão apresentador e entrada pelo nome. A proposta é inspirada no universo do
+programa antigo, com escolhas pedagógicas novas; não é uma reprodução integral.
+
+COMO ABRIR
+O jogo publicado funciona pelo endereço informado no chat.
+Para abrir uma cópia local simples, abra dist/index.html num navegador moderno.
+Para usar voz personalizada também nas falas dinâmicas, com o Chatterbox já
+iniciado em http://127.0.0.1:8000:
+
+  python local_server.py --port 8766 --reference Briggs.mp3
+
+Depois abra http://127.0.0.1:8766
+O servidor local atende apenas 127.0.0.1. Nenhuma configuração da instalação
+original do Chatterbox foi alterada. O cache de falas com nomes fica em
+.voice-cache, fora dos arquivos publicados do jogo.
+
+VOZ
+As falas pré-gravadas são geradas pelo modelo multilíngue do Chatterbox,
+language=pt, usando a referência escolhida pelo usuário. A expressividade é .95;
+o acabamento usa FFmpeg/rubberband, cerca de -1.4 semitons, sem desacelerar.
+As falas fixas podem tocar no jogo publicado sem depender do Chatterbox local.
+Falas com nomes/números variáveis usam o Chatterbox quando aberto pelo servidor
+local; na versão estática publicada, são usadas instruções gravadas do mesmo narrador.
+O botão de voz permite desligar a narração. 'Ouvir o desafio' repete a instrução.
+O jogo não troca automaticamente para outra voz do sistema.
+Leia voice-tools/LEIA-ME.txt para regenerar os 28 clipes ou usar outra referência.
+
+CONTROLES DOS CARRINHOS
+Escolha uma pista tocando no carro-alvo ou usando os botões de direção.
+Use Acelerar e trombar; no teclado, setas esquerda/direita e Enter quando
+o foco estiver na pista. Há animação de colisão, resposta e retorno se errar.
+
+ATIVIDADES
+Carros de Trombada: adição e subtração com direção e colisão.
+Palhaços Saltimbancos: completar quantidades acrescentando e retirando artistas.
+Fábrica de Risadas: grupos iguais e multiplicação.
+Blocos de Sequência: padrões visuais e progressões numéricas.
+Mestres da Bolha: contagem, dezenas e centenas.
+Relógio do Espetáculo: horas, meias horas e quartos de hora.
+Bilheteria do Circo: valores, compra e troco em reais inteiros.
+Tenda das Formas: reconhecer figuras, contar lados e identificar propriedades.
+
+Balões para Todos: divisão exata por divisor de um algarismo, com partilha
+animada após escolher entre quatro respostas de balões por criança.
+
+PROGRESSO E PERSONAGENS
+Cada nome tem suas conquistas guardadas neste navegador; não há cadastro.
+Todos os personagens têm os mesmos recursos e acesso às mesmas atividades.
+Sua escolha não altera números, dificuldade, probabilidade, pontos ou falas.
+O educador pode escolher os níveis ou o avanço por dois acertos de primeira.
+Não há perda de vidas, limite de tentativas ou cronômetro.
+
+VERIFICAÇÃO
+node checks.cjs verifica operações e alternativas em 13.500 questões aleatórias
+distribuídas pelas nove atividades e três níveis.
+Arquivos de inspeção do programa antigo e o ISO original ficam separados.
+O programa antigo não é necessário para abrir esta versão.

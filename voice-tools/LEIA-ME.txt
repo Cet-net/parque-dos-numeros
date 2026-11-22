@@ -1,0 +1,136 @@
+VOZES LOCAIS DO PARQUE DOS NÚMEROS
+
+Este utilitário chama um Chatterbox já iniciado. Ele não instala nada, não inicia
+o servidor e não altera D:\Chatterbox nem a configuração do modelo.
+O cliente usa Python 3 e sua biblioteca padrão. O ajuste de tom padrão requer
+FFmpeg com o filtro rubberband, encontrado no PATH ou indicado por --ffmpeg.
+
+Não há voz padrão: o usuário precisa escolher um filename antes de gerar.
+--voice usa uma voz predefinida; --reference usa um áudio de referência que já
+existe no servidor. Os argumentos são nomes de arquivo, nunca caminhos locais.
+
+COMANDOS (executar na pasta parque-matematica)
+
+  python voice-tools\generate_voice_pack.py --probe
+
+Consulta /get_predefined_voices, /get_reference_files e /api/model-info, com
+timeout independente por endpoint. Se model-info não responder, não se pode
+concluir que algum modelo esteja carregado ou qual seja. O programa preserva
+essa incerteza, sem iniciar uma síntese para descobrir.
+
+  python voice-tools\generate_voice_pack.py --dry-run
+
+Mostra todos os textos e parâmetros, ainda sem escolher uma voz. Não chama /tts,
+não consulta o servidor e não grava arquivos. O modo --probe é separado.
+
+Depois da escolha explícita de um filename pelo usuário, substitua VOZ.wav:
+
+  python voice-tools\generate_voice_pack.py --voice VOZ.wav --dry-run
+  python voice-tools\generate_voice_pack.py --voice VOZ.wav --only welcome
+  python voice-tools\generate_voice_pack.py --voice VOZ.wav
+
+Para um áudio de referência existente, substitua REFERENCIA.wav:
+
+  python voice-tools\generate_voice_pack.py --reference REFERENCIA.wav --dry-run
+  python voice-tools\generate_voice_pack.py --reference REFERENCIA.wav
+
+O programa verifica se o filename escolhido está na lista correspondente do
+servidor antes da primeira chamada /tts. --only pode ser repetido para gerar
+um pequeno conjunto; identificadores: welcome, entry, activities.cars,
+activities.clowns, activities.factory, activities.patterns, activities.bubbles,
+activities.clock, activities.tickets, activities.shapes, activities.division,
+hints.<atividade> para as nove dicas, success.0 até success.3,
+retry.0 até retry.2 e complete. O catálogo completo tem 28 clipes.
+
+--server altera a URL (padrão http://127.0.0.1:8000).
+--probe-timeout altera o limite por consulta (padrão 3 segundos).
+--timeout altera o limite por clipe (padrão 180 segundos).
+--lines aponta para um catálogo JSON compatível.
+--output-dir altera a pasta de saída para testes ou outro pacote.
+--force regenera os clipes selecionados, ignorando um cache válido.
+--pitch-semitones ajusta o tom em semitons (padrão -1.4, um pouco mais grave).
+--pitch-semitones 0 desativa o pós-processamento e dispensa FFmpeg.
+--ffmpeg indica outro executável (neste computador: C:\ffmpeg\bin\ffmpeg.exe).
+
+PARÂMETROS FIXOS DE SÍNTESE
+
+POST /tts, voice_mode predefined ou clone, output_format wav, language pt,
+seed 4096, cfg_weight 0.5, exaggeration 0.95, temperature 0.7,
+speed_factor 1.0, split_text false, chunk_size 120, stream false.
+A disponibilidade efetiva desses recursos depende do modelo carregado.
+A maior exaggeration solicita uma interpretação mais entusiasmada. A direção
+é uma voz grave, mais projetada e com autoridade, mantendo o convite acolhedor.
+O resultado depende da voz e do modelo e deve ser ouvido para aprovação.
+
+Depois da síntese, o padrão baixa o tom em 1.4 semitom com FFmpeg rubberband:
+pitch=2**(semitons/12), tempo=1, formant=preserved, pitchq=quality. Em seguida,
+aplica o perfil de projeção authoritative-warm-v1:
+  equalizer=f=180:t=q:w=1:g=1.5
+  acompressor=threshold=.12:ratio=2.2:attack=8:release=100:makeup=1.3
+  alimiter=limit=.94:level=disabled
+O equalizador dá corpo, o compressor torna a presença mais consistente e o
+limitador controla os picos; não há trim/pad. O tempo nominal permanece 1,
+com eventual pequena diferença de duração nas bordas do filtro.
+Entrada e saída passam por stdin/stdout, sem arquivos
+intermediários de áudio. O WAV final PCM 16 bits é validado e salvo atomicamente.
+Os tamanhos RIFF/data de uma saída em pipe são finalizados após a captura.
+O ajuste de tom e a projeção não são campos enviados à API Chatterbox.
+--pitch-semitones 0 mantém o comportamento de bypass integral: desativa tanto
+o pitch quanto o perfil de projeção e dispensa FFmpeg.
+
+Exemplos:
+  python voice-tools\generate_voice_pack.py --reference Briggs.mp3 --dry-run
+  python voice-tools\generate_voice_pack.py --reference Briggs.mp3
+  python voice-tools\generate_voice_pack.py --reference Briggs.mp3 --pitch-semitones 0
+
+SAÍDA E CACHE
+
+Pasta padrão: dist\assets\voice\
+- Arquivos WAV com nome do clipe e hash dos parâmetros.
+- cache-index.json: SHA-256 de texto + voz + parâmetros de síntese + transformação.
+- manifest.json: índice de reprodução usado pelo jogo.
+- errors.json: erros por clipe da execução mais recente.
+
+WAVs são validados como RIFF/WAVE com chunks fmt e data não vazio, salvos em
+arquivo temporário e movidos atomicamente ao destino. O índice é atualizado
+após cada sucesso. Um arquivo ausente, inválido ou com hash divergente não é
+reutilizado. Uma falha de clipe não impede a tentativa dos demais. Reexecutar o
+mesmo comando aproveita os sucessos e tenta novamente os clipes faltantes.
+Exit codes: 0 concluído/consulta/plano, 1 erro de configuração ou consulta
+necessária, 2 um ou mais clipes falharam (os demais continuam disponíveis).
+
+O índice também registra postprocess (semitons, proporção de pitch, filtro,
+tempo, preservação de formantes, qualidade, codec e perfil de projeção com todos
+os parâmetros de equalização, compressor e limitador). Mudar o tom ou a intensidade
+gera uma chave nova e não reutiliza a versão anterior. Os WAVs antigos ficam
+preservados; o manifesto passa a apontar para a configuração escolhida.
+
+O hash não identifica os pesos do modelo: se o checkpoint ou conteúdo da voz
+com o mesmo filename mudar, use --force ou uma pasta de saída nova.
+
+CONTRATO DO MANIFESTO
+
+  {
+    "welcome": {"src": "assets/voice/welcome-HASH.wav", "text": "..."},
+    "entry": {"src": "assets/voice/entry-HASH.wav", "text": "..."},
+    "activities": {"cars": {"src": "assets/voice/activities-cars-HASH.wav", "text": "..."}},
+    "success": [{"src": "assets/voice/success-0-HASH.wav", "text": "..."}],
+    "retry": [{"src": "assets/voice/retry-0-HASH.wav", "text": "..."}],
+    "complete": {"src": "assets/voice/complete-HASH.wav", "text": "..."}
+  }
+
+src é relativo à raiz dist do jogo, não à pasta do manifesto. Após um pacote
+completo, activities e hints contêm as nove atividades. Em uma geração parcial ou com
+falhas, só aparecem clipes válidos da voz selecionada; o jogo deve usar fallback
+quando um item faltar. As listas success/retry mantêm a ordem dos clipes
+disponíveis. Nenhum caminho absoluto do computador entra no manifesto.
+
+Os textos são genéricos e pré-graváveis. O nome da criança e valores dinâmicos
+de cada desafio NÃO são enviados ao Chatterbox por este utilitário. O jogo deve
+usar o proxy local para essas partes dinâmicas. Na publicação estática, repete
+as instruções e dicas gravadas, mantendo os números específicos visíveis em texto.
+Não há troca automática para a voz do navegador.
+Este utilitário prepara arquivos: não modifica voice.js, app.js nem inicia
+reprodução automaticamente. Para o Site hospedado, os WAVs/manifesto precisam
+ser incluídos na próxima versão publicada; o navegador não precisa acessar o
+servidor local do professor para tocar os áudios já empacotados.

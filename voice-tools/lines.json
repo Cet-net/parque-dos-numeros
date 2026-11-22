@@ -1,0 +1,38 @@
+{
+  "welcome": "Bem-vindos ao Parque dos Números. Você não precisa de um ingresso, mas precisamos do seu nome.",
+  "entry": "O espetáculo vai começar! Escolha uma atração e venha brincar com a matemática.",
+  "activities": {
+    "cars": "Piloto, prepare o volante! Escolha o carro com a resposta e acelere para dar uma trombada.",
+    "clowns": "Os palhaços estão chegando ao picadeiro. Complete a quantidade e prepare um belo espetáculo!",
+    "factory": "Nossa fábrica está cheia de risadas! Observe os grupos e descubra quantos sorrisos temos ao todo.",
+    "patterns": "Os blocos querem entrar no espetáculo. Descubra o padrão e escolha o próximo da sequência.",
+    "bubbles": "Quantos números cabem em uma bolha? Observe o desafio e estoure a bolha com a resposta certa.",
+    "clock": "O espetáculo tem hora para começar! Observe os ponteiros e descubra o horário.",
+    "tickets": "A bilheteria está aberta! Confira os valores dos ingressos e descubra a quantia do desafio.",
+    "shapes": "Bem-vindo à tenda das formas! Observe as figuras e descubra os segredos da geometria.",
+    "division": "O palhaço vai distribuir os balões! Quantos balões cada criança recebe? Escolha uma resposta. Depois, vamos conferir a partilha juntos!"
+  },
+  "success": [
+    "Muito bem! Você fez uma descoberta e ganhou uma estrela!",
+    "Que espetáculo! Você encontrou a resposta!",
+    "Uma salva de palmas para essa descoberta!",
+    "Isso mesmo! A matemática está em todo lugar!"
+  ],
+  "retry": [
+    "Quase! Observe com calma e tente outra vez.",
+    "Vamos tentar de outro jeito? Você pode pedir uma dica.",
+    "Cada tentativa ajuda a aprender. Vamos descobrir juntos!"
+  ],
+  "complete": "Um espetáculo de descobertas! Você completou os desafios desta atração. O parque tem muito mais para explorar!",
+  "hints": {
+    "cars": "Na adição, junte as quantidades. Na subtração, retire uma quantidade da outra. Depois, escolha a pista com o resultado.",
+    "clowns": "Conte os palhaços que já chegaram. Acrescente os que faltam para completar a quantidade pedida.",
+    "factory": "Cada grupo tem a mesma quantidade. Conte todos os grupos ou some suas quantidades para descobrir o total.",
+    "patterns": "Observe o que se repete ou quanto os números aumentam. Continue seguindo a mesma regra.",
+    "bubbles": "Conte com calma. Uma dezena vale dez unidades, e uma centena vale cem unidades.",
+    "clock": "O ponteiro menor indica as horas. O maior indica os minutos. Observe a posição de cada um.",
+    "tickets": "Confira o preço e a quantidade de ingressos. Se houver troco, tire o valor da compra da quantia paga.",
+    "shapes": "Observe o contorno da figura. Conte os lados e os cantinhos para descobrir suas características.",
+    "division": "Todas as crianças devem receber a mesma quantidade. Escolha quantos balões cada uma recebe, usando todos os balões, sem sobrar nenhum."
+  }
+}

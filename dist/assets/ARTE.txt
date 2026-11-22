@@ -1,0 +1,54 @@
+ARTES DO PARQUE DOS NÚMEROS
+
+Produção: ferramenta ImageGen integrada, sem CLI/API externa de imagem.
+Arquivos consumidos pelo jogo: WebP nesta pasta e logo.svg.
+PNG de origem ficam preservados na pasta art-source do projeto local.
+
+Direção de arte comum dos prompts:
+Ilustração cartunesca de filme de animação 3D para crianças de 6 a 10 anos,
+formas arredondadas, volume esculpido, texturas pintadas, luz teatral dourada,
+sombras suaves, roxo, vermelho e dourado. Sem lettering nos cenários.
+
+Prompt principal do Leo:
+Leão apresentador carismático e amigável de corpo inteiro, juba dourada fofa,
+cartola com inclinação, casaca vermelha de acabamento dourado, gravata roxa,
+colete creme, uma pata estendida convidando o público, outra com batuta.
+Visual 3D cartunesco polido, pelagem e tecido texturizados, fundo transparente.
+
+Conjunto de cenários:
+cars: carros de trombada vermelho e turquesa, leão e coelho, colisão brincalhona,
+estrelas, pista de circo, pilares listrados e luzes de festa.
+clowns (versão final): três acrobatas igualmente hábeis e centrais — menina
+negra, menino de ascendência asiática e menina branca — saltando em pódios
+iguais, figurinos de circo igualmente elaborados, pele natural visível, sem
+caracterização étnica de figurino ou exageros raciais, cenário roxo/dourado.
+factory: máquina simpática roxa e dourada com olhos, tubos, engrenagens,
+esferas sorridentes em grupos e esteira em oficina de circo.
+patterns: formas geométricas tridimensionais em sequência num palco,
+personagens simpáticos, cortinas verde-água e pontos de luz dourados.
+bubbles: foca mágica simpática soprando bolhas iridescentes com estrelas,
+tenda azul e iluminação volumétrica.
+clock: relógio de circo roxo e dourado, estrelas marcando horas, ratinho
+apresentador, madeira e veludo. É ilustração de atração, não relógio de questão.
+tickets: bilheteria listrada, guaxinim atendente com colete, ingresso e moedas,
+crianças e parque ao fundo.
+shapes: tenda composta por formas geométricas, cubos, cones, esferas e argolas,
+coelho mágico, palco de madeira e luzes quentes.
+
+Personagens de jogo:
+Quatro sprites de corpo inteiro, mesma pose acolhedora, mesma qualidade visual,
+mesmo figurino roxo/dourado com camisa branca, gravata vermelha, calça azul e
+tênis. Sem cartola ou pintura facial. Representação respeitosa, sem traços
+raciais exagerados ou estereótipos. Lia: pele castanha escura e cabelo crespo
+em dois puffs; Kenji: ascendência asiática e cabelo escuro liso; Maya: pele
+castanha e cabelo escuro ondulado; Tom: pele clara, sardas e cabelo ruivo.
+Os nomes não são etiquetas de etnia no jogo, e todos têm as mesmas capacidades.
+
+Logo vetorial novo: letreiro de circo com moldura e lâmpadas douradas,
+fita e volumes em degradê, texto legível 'Parque dos Números'.
+
+Divisão: palhaço distribuindo balões a crianças de diferentes etnias,
+com participação equivalente e a mesma quantidade para cada uma.
+
+Divisão: palhaço distribuindo balões a crianças de diferentes etnias,
+com participação equivalente e a mesma quantidade para cada uma.
