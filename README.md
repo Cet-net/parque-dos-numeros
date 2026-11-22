@@ -4,6 +4,11 @@ Nove jogos de matemática para o Fundamental 1 em um circo cartunesco, com anima
 
 ## Jogar
 
+Sites públicos no GitHub Pages:
+
+- [Andre-prof](https://andre-prof.github.io/parque-dos-numeros/)
+- [Cet-net](https://cet-net.github.io/parque-dos-numeros/)
+
 Abra `dist/index.html` em um navegador moderno. Não é necessário instalar dependências para jogar; as 28 falas gravadas acompanham o projeto.
 
 Para servir por HTTP, execute na raiz:
@@ -47,3 +52,9 @@ Verifica operações e alternativas em 13.500 desafios aleatórios nas nove ativ
 O projeto contém HTML, CSS, JavaScript, artes WebP/SVG, áudios WAV e ferramentas opcionais em Python. Não precisa de etapa de compilação. Os prompts e a direção de arte estão em `dist/assets/ARTE.txt`.
 
 Esta é uma criação moderna inspirada no universo circense do programa antigo, com escolhas pedagógicas próprias; não é uma reprodução integral. O ISO e a análise do programa antigo ficam separados.
+
+## Publicação e licença
+
+Cada atualização na branch `main` verifica os desafios e publica o conteúdo de `dist/` no GitHub Pages por GitHub Actions.
+
+Licenciado sob a [licença MIT](LICENSE).

@@ -3,6 +3,7 @@
   "voice_clips": 28,
   "files_sha256": {
     ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    ".github/workflows/pages.yml": "40bf7ae058a085e1800f61aa0bc39d5c998f9c08cf99559470429d5db82b87d2",
     ".gitignore": "95816f04c2df0c4bff83666cc2dbf6a885084578c2573f5bd6ad57e5c4a995ff",
     "checks.cjs": "3e8670ef8263dc9a795e29eb134079aa746603e36ca94b2c74f45987a9c4c553",
     "dist/app.js": "14b0f853ae587296a6ddfce44ba24d108207fbc15667252c333adb589557a39c",
@@ -65,8 +66,9 @@
     "dist/theater.css": "30d599616f44a926a37d47fd6cfd028339390324a246a951f1100b01dd45ee9e",
     "dist/voice.js": "1d6bcd89459f85bfd65b7fb253737818937be0f136771da32c119d82eae6944e",
     "LEIA-ME.txt": "7050806438654a3f172a2bc95492068f5935d80c8c425d8033f5f233fc3e862f",
+    "LICENSE": "2bf27af83d77086fa186540c47efdc8b6ea30d73aec50e571b4d68573dbad1d4",
     "local_server.py": "85f51755d68cf189afc8669c1318ef5dc9433eed4e015ba36aad2daaf8132e4a",
-    "README.md": "dc5b4575169756363f0a4196e5c9a52d9d93e05dd3a32cb0f63312d6e8747682",
+    "README.md": "456d1a078de5225cfc57760416275e968124cf5ab8ee5754415af5375fbef6d2",
     "voice-tools/generate_voice_pack.py": "5658e406f4cd82c5312c9c722f39caa7138ddf7c6f07519ac58793c163c1a104",
     "voice-tools/LEIA-ME.txt": "cad1aa992e0a79f4e688de5cbf48db42bc1cf287c8cd0701f0a616cee7d35071",
     "voice-tools/lines.json": "67fbbe7a44e383cda7e1b35e31a2684d9069d29706ac852138210d6b1ce50417"
